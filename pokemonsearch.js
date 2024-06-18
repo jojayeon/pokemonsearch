@@ -14,8 +14,8 @@ const data = loadPokemonNames("./pokemonNames.json");
 
 
 
-let pn = [];
-function nc(ina) {
+const nc = (ina) => {
+  let pn = [];
   for (let i = 0; i < data.length; i++) {
     for (let j = 0; j < data[i].length; j++) {
       for(let k = 0; k < ina.length; k++){
@@ -30,8 +30,7 @@ function nc(ina) {
           let k4 = k+3
           let j4 = j+3
           let ifc4 = ina[k4] === data[i][j4]
-        if(isa.length === 1) { //todo 이걸 해결해보기 주말 
-          let ifc = ina[k] === data[i][j]
+        if(isa.length === 1) { 
           if(ifc === true){
             if(pn !== data[i]){
               pn += data[i]+" ";
@@ -65,8 +64,8 @@ function nc(ina) {
       } //fir3 k
     }//fro2 j
   }//for1 i
-  console.log(pn);
+  return pn;
 }
 
-nc("이");
 
+module.exports = nc
